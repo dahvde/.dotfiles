@@ -6,11 +6,11 @@ require("luasnip.loaders.from_snipmate").lazy_load({ paths = vim.fn.stdpath("con
 
 cmp.setup({
 	mapping = cmp.mapping.preset.insert({
-		["<C-b>"] = cmp.mapping.scroll_docs(-1),
-		["<C-f>"] = cmp.mapping.scroll_docs(1),
+		["<C-k>"] = cmp.mapping.scroll_docs(-1),
+		["<C-j>"] = cmp.mapping.scroll_docs(1),
 		["<C-o>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["tab"] = cmp.mapping.confirm({ select = true }),
 	}),
 	snippet = {
 		expand = function(args)

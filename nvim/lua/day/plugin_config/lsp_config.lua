@@ -11,13 +11,14 @@ lsp.ensure_installed({
 	"lua_ls",
 	"rust_analyzer",
 	"gopls",
+	"clangd",
 })
 
 local cmp = require("cmp")
 -- local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-	["<C-y>"] = cmp.mapping.confirm({ select = true }),
-	["<C-Space"] = cmp.mapping.complete(),
+	["tab"] = cmp.mapping.confirm({ select = true }),
+	["<C-Space>"] = cmp.mapping.complete(),
 })
 
 local cmp_window = {
@@ -29,10 +30,10 @@ local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lsp.set_preferences({
 	sign_icons = {
-		error = "",
-		warning = "",
-		hint = "",
-		infor = "",
+		error = "",
+		warn = "",
+		info = "",
+		hint = "",
 	},
 })
 
@@ -62,6 +63,17 @@ end)
 
 lsp.setup()
 
+lsp.set_sign_icons({
+	error = "",
+	warn = "",
+	hint = "",
+	info = "",
+})
+
+vim.diagnostic.config({
+	virtual_text = true,
+})
+
 lspconfig.lua_ls.setup({
 	capabilities = lsp_capabilities,
 })
@@ -78,9 +90,9 @@ lspconfig.gopls.setup({
 })
 require("mason").setup()
 
-require("lsp-colors").setup({
-	Error = "#db4b4b",
-	Warning = "#db4b4",
-	Information = "#0db9d7",
-	Hint = "#10B981",
-})
+-- require("lsp-colors").setup({
+-- 	Error = "#db4b4b",
+-- 	Warning = "#db4b4",
+-- 	Information = "#0db9d7",
+-- 	Hint = "#10B981",
+-- })

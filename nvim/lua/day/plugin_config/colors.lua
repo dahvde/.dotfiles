@@ -10,20 +10,20 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
 	vim.cmd([[
-    augroup MyColorScheme
-        autocmd!
-        autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
-        highlight clear LineNr
-        highlight clear SignColumn
-        highlight DiagnosticWarn guifg=#ff8400
-        highlight DiagnosticVirtualTextWarn guifg=#ff8400 guibg=none
-        highlight DiagnosticVirtualTextError guibg=NONE
-        highlight DiagnosticVirtualTextInfo guibg=NONE
-        highlight DiagnosticVirtualTextHint guibg=NONE
-        highlight DiagnosticVirtualTextOk guibg=NONE
-        highlight TabLine guibg=NONE
-    augroup END
-    ]])
+	   augroup MyColorScheme
+	       autocmd!
+	       autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
+	       highlight clear LineNr
+	       highlight clear SignColumn
+	       highlight DiagnosticWarn guifg=#ff8400
+	       highlight DiagnosticVirtualTextWarn guifg=#ff8400 guibg=none
+	       highlight DiagnosticVirtualTextError guibg=NONE
+	       highlight DiagnosticVirtualTextInfo guibg=NONE
+	       highlight DiagnosticVirtualTextHint guibg=NONE
+	       highlight DiagnosticVirtualTextOk guibg=NONE
+	       highlight TabLine guibg=NONE
+	   augroup END
+	   ]])
 end
 
 -- Default options

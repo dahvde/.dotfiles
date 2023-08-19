@@ -17,13 +17,11 @@ local plugins = {
 		"numToStr/Comment.nvim",
 		lazy = false,
 	},
-	--
 	"nvim-tree/nvim-tree.lua",
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", opts = true },
 	},
-	"mhartington/formatter.nvim",
 	-- formatter
 	{
 		"windwp/nvim-autopairs",
@@ -32,18 +30,25 @@ local plugins = {
 	},
 	"sbdchd/neoformat",
 	-- theme
-	"wuelnerdotexe/vim-enfocado",
+	{
+		"wuelnerdotexe/vim-enfocado",
+		lazy = false,
+	},
 	-- rust
 	"simrat39/rust-tools.nvim",
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.2",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	"folke/lsp-colors.nvim",
+	-- "folke/lsp-colors.nvim",
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
@@ -63,6 +68,7 @@ local plugins = {
 			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
 			{ "L3MON4D3/LuaSnip" }, -- Required
 		},
+		lazy = false,
 	},
 	"saadparwaiz1/cmp_luasnip",
 	"rafamadriz/friendly-snippets",
