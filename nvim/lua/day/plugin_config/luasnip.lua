@@ -10,7 +10,7 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.scroll_docs(1),
 		["<C-o>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		["tab"] = cmp.mapping.confirm({ select = true }),
+		-- ["<Tab>"] = cmp.mapping.confirm({ select = true }),
 	}),
 	snippet = {
 		expand = function(args)

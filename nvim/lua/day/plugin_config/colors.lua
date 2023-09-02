@@ -76,10 +76,14 @@ end
 -- 	groups = {},
 -- })
 
-vim.g.oxocarbon_lua_transparent = true
-vim.g.oxocarbon_lua_alternative_telescope = true
--- setup must be called before loading
-vim.g.t_Co = 256
-vim.g.enfocado_style = "neon"
+require("onedark").setup({
+	style = "deep",
+	transparent = true,
+})
+
+-- vim.g.oxocarbon_lua_transparent = true
+-- vim.g.oxocarbon_lua_alternative_telescope = true
+-- vim.g.t_Co = 256
+vim.g.enfocado_style = "nature"
 
 ColorMyPencils("enfocado")

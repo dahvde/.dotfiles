@@ -16,9 +16,23 @@ vim.opt.colorcolumn = "80"
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
+vim.opt.formatoptions:remove({ "c", "r", "o" })
+
+-- Formatter.nvim
+-- vim.cmd([[
+-- augroup FormatAutogroup
+--   autocmd!
+--   autocmd BufWritePost * FormatWrite
+-- augroup END
+-- ]])
+
+-- Neoformat
 vim.cmd([[
 augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
 ]])
+
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")

@@ -12,15 +12,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	-- Comments
+	-- comments
 	{
 		"numToStr/Comment.nvim",
 		lazy = false,
 	},
-	"nvim-tree/nvim-tree.lua",
 	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons", opts = true },
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
 	},
 	-- formatter
 	{
@@ -29,11 +33,23 @@ local plugins = {
 		opts = {}, -- this is equalent to setup({}) function
 	},
 	"sbdchd/neoformat",
+	"mhartington/formatter.nvim",
 	-- theme
 	{
 		"wuelnerdotexe/vim-enfocado",
 		lazy = false,
 	},
+	"nyoom-engineering/oxocarbon.nvim",
+	"folke/tokyonight.nvim",
+	"navarasu/onedark.nvim",
+	"ron-rs/ron.vim",
+	-- utilities
+	"nvim-tree/nvim-tree.lua",
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons", opts = true },
+	},
+	"lewis6991/gitsigns.nvim",
 	-- rust
 	"simrat39/rust-tools.nvim",
 	"mfussenegger/nvim-dap",
